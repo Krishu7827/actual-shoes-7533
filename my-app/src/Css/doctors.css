@@ -1,0 +1,21 @@
+.Doctors{
+    margin-left: 2%;
+}
+
+.Doctors-card-container{
+    display: flex;
+    margin-top: 1%;
+}
+
+.pagination{
+    margin-top:3%;
+}
+
+#Doctor-details{
+    margin-left: 3%;
+}
+.date-button{
+    width: 50px;
+    margin: 0.4%;
+
+}
