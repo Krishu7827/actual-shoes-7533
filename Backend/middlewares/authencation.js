@@ -12,7 +12,7 @@ const authentication=async(req,res,next)=>{
                 next()
             }
     }else{
-        res.send({"msg":"login again"})
+         res.send({"msg":"login again"})
     }
 };
 module.exports={
