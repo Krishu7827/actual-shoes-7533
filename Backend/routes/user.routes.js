@@ -32,23 +32,52 @@ userRoute.post("/Register", async (req, res) => {
     }
   })
 
-userRoute.post("/login",async(req,res)=>{
-    try {
-        const {email,password}= req.body
-        let findmail=await UserModel.find({email})
-        if(findmail.length===1){
-            bcrypy.compare(findmail[0]).password,password,(error,result)=>{
-                if(error){
-                    res.send({"msg": "wrong password"})
+// userRoute.post("/login",async(req,res)=>{
+//     try {
+//         const {email,password}= req.body
+//         let findmail=await UserModel.find({email})
+//         console.log(email)
+//         if(findmail.length===0){
+//             bcrypy.compare(findmail[0]).password,password,(error,result)=>{
+//                 if(error){
+//                     res.send({"msg": "wrong password"})
+//                 }else{
+//                     const token=jwt.sign({dataid:findmail[0]._id,email},process.env.token_secret)
+//                     res.send({"msg":"successfully login",token})
+//                 }
+//             }
+            
+//         }
 
-                }else{
-                    const token=jwt.sign({dataid:findmail[0]._id,email},process.env.token_secret)
-                    res.send({"msg":"successfully login",token})
-                }
-            }
-        }
+//     } catch (error) {
+//         console.log("error")
+//     }
+// })
 
-    } catch (error) {
-        
-    }
-})
+
+userRoute.post("/login", async (req, res) => {
+  try {
+      const { email, password } = req.body;
+      let findmail = await UserModel.find({ email });
+
+      if (findmail.length === 0) {
+          res.send({ "msg": "Email not found" });
+      } else {
+          const isPasswordMatch = await bcrypt.compare(password, findmail[0].password);
+          
+          if (isPasswordMatch) {
+              const token = jwt.sign({ dataid: findmail[0]._id, email }, process.env.token_secret);
+              res.send({ "msg": "Successfully logged in", token });
+          } else {
+              res.send({ "msg": "Wrong password" });
+          }
+      }
+  } catch (error) {
+      console.log(error);
+      res.status(500).send({ "msg": "An error occurred" });
+  }
+});
+
+module.exports={
+  userRoute
+}
