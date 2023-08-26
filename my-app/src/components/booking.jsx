@@ -1,6 +1,8 @@
 import React from "react";
 
 import Doctors from "./doctors";
+import Filter from "./filter";
+
 
 
 
@@ -8,6 +10,7 @@ import Doctors from "./doctors";
     console.log("name")
 
     return( <div>
+       
 
         <Doctors/>
 

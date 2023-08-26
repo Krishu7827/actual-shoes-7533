@@ -1,0 +1,62 @@
+.coypUp {
+    min-width: 100px;
+max-width: 150px;
+overflow: hidden;
+padding: 4px 13px;
+text-overflow: ellipsis;
+white-space: nowrap;
+user-select: none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+*, *::before, *::after {
+box-sizing: inherit;
+}
+
+
+
+.djNeDv {
+display: flex;
+user-select: none;
+background-color: rgb(245, 245, 245);
+border-style: solid;
+border-color: rgb(25, 42, 80);
+border-width: 1px;
+color: rgb(51, 51, 51);
+cursor: pointer;
+white-space: nowrap;
+box-sizing: border-box;
+margin: 10px 8px 10px 0px;
+text-align: center;
+align-self: center;
+font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+font-size: 14px;
+line-height: 20px;
+letter-spacing: 0em;
+text-transform: none;
+padding: 3px;
+border-radius: 18px;
+}
+
+
+#filter-item{
+    display: flex;
+}
+
+
+.popup {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
