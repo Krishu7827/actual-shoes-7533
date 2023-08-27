@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
+import "../Css/doctors.css";
 
 
 const MapboxMap = () => {

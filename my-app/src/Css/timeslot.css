@@ -1,0 +1,316 @@
+.fePWpN {
+    display: flex;
+   
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    -webkit-box-align: stretch;
+    align-items: stretch;
+    z-index: 10;
+    overflow: auto;
+    position: relative;
+   }
+
+   .jeXWlC {
+    width: 88px;
+    
+    
+    overflow: hidden;
+}  
+.fOMiBE {
+    color: rgb(51, 51, 51);
+    letter-spacing: 0px;
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    font-size: 17px;
+    line-height: 24px;
+    font-family: sharp-sans-bold, fallback-font, Arial, sans-serif;
+    margin-left: 0px;
+    text-decoration: none;
+}
+
+.bUkTpJ {
+    color: rgb(51, 51, 51);
+    font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-transform: none;
+}
+
+.hxKNpZ {
+    color: rgb(112, 112, 112);
+    font-family: sharp-sans-medium, fallback-font, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-transform: none;
+}
+
+.imIKyZ {
+    color: rgb(210, 47, 45);
+    font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-transform: none;
+    vertical-align: middle;
+    
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+
+:not(svg) {
+    transform-origin: 0px 0px;
+}
+
+.gabros {
+    height: 1em;
+    width: 1.075em;
+    font-size: 13px;
+    vertical-align: middle;
+}
+
+.dIMPVP {
+  
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+}
+
+.fJlGSC {
+    display: inline-flex;
+    gap: 2px;
+    vertical-align: middle;
+    line-height: 18px;
+}
+
+.jkfiNK {
+    width: 1.667em;
+}
+
+.dIMPVP {
+  
+    font-size: 1em;
+    height: 1em;
+    width: 1em;
+}
+
+.hJMGUA {
+    background-color: transparent;
+    transition: background-color 0.2s ease 0s;
+    color: rgb(51, 51, 51);
+    height: 44px;
+    width: 44px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.dbcZyM {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: auto;
+    width: fit-content;
+    font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-transform: none;
+    height: 48px;
+    padding: 0px 20px;
+}
+button {
+    border-radius: 0;
+}
+
+.dElqhm {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-family: sharp-sans-bold, fallback-font, Arial, sans-serif;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-transform: none;
+    font-size: 20px;
+    color: rgb(51, 51, 51);
+    width: 190px;
+}
+
+.fRPMBc button[data-test="availability-modal-controls-right-arrow"], .fRPMBc button[data-test="availability-modal-controls-left-arrow"], .fRPMBc div[data-test="quick-links-header-close-button"] {
+    cursor: pointer;
+}
+
+.hJMGUA {
+    background-color: transparent;
+    transition: background-color 0.2s ease 0s;
+    color: rgb(51, 51, 51);
+    height: 44px;
+    width: 44px;
+    padding: 2px;
+    border-radius: 4px;
+}
+
+.dbcZyM {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: auto;
+    width: fit-content;
+    font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-transform: none;
+    height: 48px;
+    padding: 0px 20px;
+}
+
+button {
+   
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: center;
+    cursor: default;
+    writing-mode: horizontal-tb !important;
+}
+
+.ggJEIS {
+    color: rgb(51, 51, 51);
+    font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+.bNGaPR {
+    -webkit-box-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    
+    font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-transform: none;
+    height: 30px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    animation: 0.1s ease-out 0s 1 normal forwards running ehLtDs;
+    cursor: pointer;
+    background-color: rgb(255, 240, 75);
+    border: 1px solid rgb(255, 240, 75);
+    color: rgb(51, 51, 51);
+    flex: 0 0 auto;
+    width: 6vw;
+    margin: 0px 8px 8px 0px;
+}
+
+.eaPKdX {
+    margin-bottom: 20px;
+}
+
+.ggJEIS {
+    color: rgb(51, 51, 51);
+    font-family: sharp-sans-semibold, fallback-font, Arial, sans-serif;
+    font-size: 16px;
+    letter-spacing: 0em;
+    text-transform: none;
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+
+
+.patient-web-app__sc-1ibplyt-5-hFBkEj{
+    display:flex !important;
+    margin-bottom:5%;
+    background-color: rgb(255, 255, 255);
+     box-shadow: rgba(163, 163, 163, 0.5) 0px 2px 3px 0px; 
+    padding: 16px 16px 20px
+}
+
+
+
+
+/* Add these styles to your existing CSS or style file */
+
+.patient-web-app__sc-efinr5-5.eVhHvs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 400px; /* Set your desired maximum width */
+   
+  }
+  
+  .patient-web-app__sc-efinr5-5.eVhHvs .bNGaPR {
+    flex: 0 0 calc(33.33% - 10px); 
+    margin: 5px;
+  }
+  
+
+
+
+/* button pop element */
+
+
+/* modalStyles.css */
+
+.custom-overlay {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    position: fixed;
+    top: 10%;
+    right: 25%; /* Align to the right edge of the viewport */
+    width: 35%;
+    height: 80%;
+    border-top: 0.5px solid rgb(226, 226, 226);
+    border-bottom: 0.5px solid rgb(1, 0, 0);
+    padding: 25px 15px;
+  }
+  
+  .custom-modal-content {
+    position: absolute;
+    top: 10px; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+     /* Set your desired maximum width */
+    
+  }
+  
+  
