@@ -1,15 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect ,useContext} from "react";
 import data from "./db.json";
 import "../Css/doctors.css";
 import Buttonforbooking from "./bookingbutton";
 import { startOfDay, addDays, format } from "date-fns";
 import MapboxMap from "./map"
 import Filter from "./filter";
+import { Authcontext } from "../Allroutes/context";
 
 
 const Doctors = () => {
+  const user=useContext(Authcontext)
+  console.log(user)
+  user.setData(data)
+
+  // user.value2(data)
+  console.log(user)
   const doctorsPerPage = 4; // Number of doctors per page
-  const [content, change_data] = useState(data);
+  // const [content, change_data] = useState(data);
   const [currentPage, setCurrentPage] = useState(1);
 
   const today = startOfDay(new Date());
@@ -28,14 +35,14 @@ console.log(availableDates);
   useEffect(() => {
     // You can perform any additional logic here when content or currentPage changes.
     // For now, we won't add any additional logic.
-  }, [content, currentPage]);
+  }, [user.details, currentPage]);
 
   // Calculate the index range for the current page
   const startIndex = (currentPage - 1) * doctorsPerPage;
   const endIndex = startIndex + doctorsPerPage;
 
   // Slice the data array to get doctors for the current page
-  const doctorsForPage = content.slice(startIndex, endIndex);
+  const doctorsForPage = user.details.slice(startIndex, endIndex);
 
 
   return (
@@ -146,7 +153,7 @@ console.log(availableDates);
       ))}
    
       <div className="pagination">
-        {Array.from({ length: Math.ceil(content.length / doctorsPerPage) }, (_, index) => (
+        {Array.from({ length: Math.ceil(user.details.length / doctorsPerPage) }, (_, index) => (
           <button id="page-button"
             key={index + 1}
             onClick={() => setCurrentPage(index + 1)}
