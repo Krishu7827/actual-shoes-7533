@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import "./Navbar.module.css";
 import img from "../ThynkCafe-fotor-20230824141827.png"
+import PopupLoginForm from './PopUpLogin';
 // function ReactNavbar() {
 //   return (
 //     <>
@@ -58,7 +59,7 @@ function Navbar() {
       <li><a className="active" href="#">Service <span>|</span></a></li>
       <li><a href="#">My Appointment <span>|</span></a></li>
       <li><a href="#">Past Appointment <span>|</span></a></li>
-      <li><a href="#">Login<span>|</span></a></li>
+      <li><a href="#">Login<span><PopupLoginForm /></span></a></li>
       <li><a href="#">Signup</a></li>
     </ul>
   </nav>
