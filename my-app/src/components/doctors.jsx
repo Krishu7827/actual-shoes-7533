@@ -10,10 +10,10 @@ import { Authcontext } from "../Allroutes/context";
 
 const Doctors = () => {
   const user=useContext(Authcontext)
-  console.log(user)
-  user.setData(data)
+ 
+  
 
-  // user.value2(data)
+ 
   console.log(user)
   const doctorsPerPage = 4; // Number of doctors per page
   // const [content, change_data] = useState(data);
@@ -31,11 +31,12 @@ const availableDates = [...Array(14)].map((_, index) => {
   return formattedRange;
 });
 
-console.log(availableDates);
-  useEffect(() => {
-    // You can perform any additional logic here when content or currentPage changes.
-    // For now, we won't add any additional logic.
-  }, [user.details, currentPage]);
+
+useEffect(() => {
+  // Only use currentPage as a dependency since you're not directly using user.details here
+  // Your other logic...
+}, [currentPage]);
+
 
   // Calculate the index range for the current page
   const startIndex = (currentPage - 1) * doctorsPerPage;
@@ -45,13 +46,22 @@ console.log(availableDates);
   const doctorsForPage = user.details.slice(startIndex, endIndex);
 
 
-  return (
-    <div className="Doctors">
+  return (<>
+
+    {user.details.length==0?(<div><Filter/>
+
+    <h1 className="heading-2">No Data is Available</h1>
+    
+    </div>):
+    
+    (<div className="Doctors">
 
 
 
       <div className="">
         <Filter/>
+
+
         <div className="Doctor-heading">
         <p>{doctorsForPage.length} providers</p>
       <h2>
@@ -59,7 +69,7 @@ console.log(availableDates);
         </h2>
         
         </div>
-      {doctorsForPage.map(({ id, image, first_name, role, address }) => (
+      {doctorsForPage.map(({ id, rating, first_name, role, address }) => (
 
         <div className="parent-element">
         <div className="Doctors-card-container" key={id}>
@@ -93,7 +103,7 @@ console.log(availableDates);
                              class="patient-web-app__sc-1jwy0ls-0 patient-web-app__sc-iny64y-0 dIMPVP egcfdg">
                             <path d="M32.2 40l-10.7-7.8L10.8 40l-3.7-2.7 4.1-12.6L.5 17l1.4-4.4h13.2L19.2 0h4.6l4.1 12.6h13.2l1.4 4.4-10.7 7.8 4.1 12.6-3.7 2.6z" fill="#F84141"></path>
                         </svg>
-                        <div class="patient-web-app__sc-fe0b3-18 ljZrQR">5.00</div>
+                        <div class="patient-web-app__sc-fe0b3-18 ljZrQR">{rating}</div>
                     </div>
                     <div data-test="polaris-v2-review-count" class="patient-web-app__sc-fe0b3-19 gtSdRL">(4)</div>
                 </div>
@@ -148,7 +158,7 @@ console.log(availableDates);
           </div>
           
         </div>
-        <div>{<Buttonforbooking/>}</div>
+        <div>{<Buttonforbooking Name={first_name} role={role} rating={rating} />}</div>
         </div>
       ))}
    
@@ -165,9 +175,9 @@ console.log(availableDates);
       </div>
       </div>
       
-      <div>{<MapboxMap/>}</div>
+      <div>{<MapboxMap pincode={"831001"}/>}</div>
     </div>
-  );
+  )}</>);
 };
 
 export default Doctors;

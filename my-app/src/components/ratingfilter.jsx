@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { Authcontext } from "../Allroutes/context";
+import data from "../components/db.json";
 
 const RatingFilter = () => {
+  const user = useContext(Authcontext);
   const [showPopup, setShowPopup] = useState(false);
   const [selectedRange, setSelectedRange] = useState(null);
 
@@ -16,12 +19,32 @@ const RatingFilter = () => {
   };
 
   const handleRangeChange = (range) => {
-    setSelectedRange(range);
+    setSelectedRange(selectedRange === range ? null : range);
+  };
+
+  const handleClearFilters = () => {
+    setSelectedRange(null);
+    // Reset the filters and show all data
+    user.setData(data);
   };
 
   const handleApplyFilters = () => {
-    // Apply your filtering logic based on selectedRange
-    console.log("Selected Range:", selectedRange);
+    const filteredItems = data.filter((item) => {
+      const rating = parseFloat(item.rating);
+      if (selectedRange) {
+        const { min, max } = ratingRanges.find(
+          (range) => range.label === selectedRange
+        );
+        return rating >= min && rating < max;
+      }
+      return true; // No range selected, no filtering
+    });
+    user.setData(filteredItems);
+  };
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+    setSelectedRange(null); // Reset selected range when closing
   };
 
   return (
@@ -51,8 +74,10 @@ const RatingFilter = () => {
       </div>
       {showPopup && (
         <div className="popup">
+          <button className="close-button" onClick={handleClosePopup}>
+            Close
+          </button>
           <h3>Select Rating Range</h3>
-          {/* Render rating range options */}
           {ratingRanges.map((range) => (
             <label key={range.label}>
               <input
@@ -65,7 +90,7 @@ const RatingFilter = () => {
               {range.label}
             </label>
           ))}
-          {/* Apply filters button */}
+           <button onClick={handleClearFilters}>Clear Filters</button>
           <button onClick={handleApplyFilters}>Apply Filters</button>
         </div>
       )}

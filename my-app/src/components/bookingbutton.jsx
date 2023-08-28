@@ -4,7 +4,8 @@ import Modal from "react-modal";
 import "../Css/doctors.css";
 import Timeslot from "./timeslots";
 
-const Buttonforbooking = () => {
+const Buttonforbooking = (props) => {
+  console.log(props)
   const today = startOfDay(new Date());
   const availableDates = [...Array(12)].map((_, index) =>
     format(addDays(today, index), "MMM d ")
@@ -48,7 +49,7 @@ const Buttonforbooking = () => {
       >
         <h2>Select a Time Slot for {selectedDate}</h2>
       
-          {<Timeslot/>}
+          {<Timeslot  Name={props.Name} role={props.role} rating={props.rating} selectedDate={selectedDate}/>}
           
         
         <button onClick={closeModal}>Close</button>

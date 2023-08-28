@@ -8,9 +8,13 @@ const generateRandomTime = () => {
   return `${hours}:${minutes} ${period}`;
 };
 
-const Timeslot = () => {
+const Timeslot = (props) => {
   const [randomTimeSlots, setRandomTimeSlots] = useState(Array(10).fill(null).map(generateRandomTime));
   const handleTimeSlotClick = (startTime) => {
+    alert("Appointment Done")
+    const {Name,role,rating,selectedDate}=props
+    const obj={Name,role,rating,selectedDate,Time:startTime}
+    console.log(obj)
     // Replace this with your logic to handle the click event for the time slot
     console.log(`Clicked on time slot: ${startTime}`);
   };
@@ -37,9 +41,9 @@ const Timeslot = () => {
                 </div>
                 <div class="patient-web-app__sc-1ibplyt-8 eRKqGm">
                     <span class="">
-                        <a data-test="quick-links-header-doctor-name" href="/doctor/sarah-jirinzu-carratala-msn-pmhnp-bc-331421?LocIdent=197752&amp;reason_visit=76&amp;insuranceCarrier=-1&amp;insurancePlan=-1&amp;dr_specialty=153&amp;isNewPatient=true" class="patient-web-app__sc-1ibplyt-6 fOMiBE">Sarah Jirinzu Carratala, MSN, PMHNP-BC</a>
+                        <a data-test="quick-links-header-doctor-name" href="/doctor/sarah-jirinzu-carratala-msn-pmhnp-bc-331421?LocIdent=197752&amp;reason_visit=76&amp;insuranceCarrier=-1&amp;insurancePlan=-1&amp;dr_specialty=153&amp;isNewPatient=true" class="patient-web-app__sc-1ibplyt-6 fOMiBE">{props.Name}, MSN, PMHNP-BC</a>
                     </span>
-                    <div class="patient-web-app__sc-1ibplyt-9 bUkTpJ">Adult Psychiatric &amp; Mental Health Nurse Practitioner</div>
+                    <div class="patient-web-app__sc-1ibplyt-9 bUkTpJ">{props.role} &amp; Mental Health Nurse Practitioner</div>
                     <div class="patient-web-app__sc-1ibplyt-10 hxKNpZ">Virtual Visit</div>
                     <div class="patient-web-app__sc-1ibplyt-11 eZoXGJ">
                         <div data-test="doctor-card-info-rating-summary" class="patient-web-app__sc-pna3q0-2 fJlGSC">
@@ -48,7 +52,7 @@ const Timeslot = () => {
                                     <path d="M32.2 40l-10.7-7.8L10.8 40l-3.7-2.7 4.1-12.6L.5 17l1.4-4.4h13.2L19.2 0h4.6l4.1 12.6h13.2l1.4 4.4-10.7 7.8 4.1 12.6-3.7 2.6z" fill="#FF6473"></path>
                                 </g>
                             </svg>
-                            <div data-test="doctor-card-info-rating-number" class="patient-web-app__sc-pna3q0-1 imIKyZ">4.22</div>
+                            <div data-test="doctor-card-info-rating-number" class="patient-web-app__sc-pna3q0-1 imIKyZ">{props.rating}</div>
                         </div>
                         <span class="patient-web-app__sc-1ibplyt-13 dCLxWX">(54)</span>
                     </div>

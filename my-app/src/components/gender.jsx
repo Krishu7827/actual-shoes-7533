@@ -1,24 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import data from "../components/db.json";
+import { Authcontext } from "../Allroutes/context";
+import "../Css/filter.css";
 
-const FilterGender= () => {
+const FilterGender = () => {
+  const user = useContext(Authcontext);
   const [showPopup, setShowPopup] = useState(false);
-  const [selectedGenders, setSelectedGenders] = useState([]);
+  const [selectedGender, setSelectedGender] = useState("");
 
-  const availableGenders = ["Male", "Female", "Other"];
+  const availableGenders = ["", "Male", "Female", "Other"]; // Add an empty option as the default
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
   };
 
-  const handleCheckboxChange = (gender) => {
-    if (selectedGenders.includes(gender)) {
-      setSelectedGenders(selectedGenders.filter((g) => g !== gender));
-    } else {
-      setSelectedGenders([...selectedGenders, gender]);
-    }
+  const handleSelectChange = (event) => {
+    setSelectedGender(event.target.value);
   };
 
-  // Filtering logic using selectedGenders array
+  const handleApplyFilters = () => {
+    const filteredItems = data.filter((item) => {
+      if (!selectedGender) {
+        return true; // No gender selected, no filtering
+      }
+      return item.gender === selectedGender;
+    });
+    user.setData(filteredItems);
+    togglePopup();
+  };
+
+  const handleClearFilters = () => {
+    setSelectedGender("");
+    user.setData(data); // Reset to original data
+    togglePopup();
+  };
 
   return (
     <div className="patient-web-app__sc-1xpo6zd-12 gSFgra">
@@ -45,16 +60,24 @@ const FilterGender= () => {
       </div>
       {showPopup && (
         <div className="popup">
-          {availableGenders.map((gender) => (
-            <label key={gender}>
-              <input
-                type="checkbox"
-                checked={selectedGenders.includes(gender)}
-                onChange={() => handleCheckboxChange(gender)}
-              />
-              {gender}
-            </label>
-          ))}
+          <select value={selectedGender} onChange={handleSelectChange}>
+            {availableGenders.map((gender) => (
+              <option key={gender} value={gender}>
+                {gender || "Select Gender"}
+              </option>
+            ))}
+          </select>
+          <div className="popup-buttons">
+            <button className="popup-button" onClick={handleApplyFilters}>
+              Apply
+            </button>
+            <button className="popup-button" onClick={handleClearFilters}>
+              Clear
+            </button>
+            <button className="popup-button" onClick={togglePopup}>
+              Close
+            </button>
+          </div>
         </div>
       )}
     </div>
