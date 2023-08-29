@@ -1,23 +1,29 @@
 
 import './App.css';
-import Navbar from './Component/Navbar';
-import { GoogleOAuthProvider } from '@react-oauth/google';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Home } from './Pages/Home';
-import { TopService } from './Component/TopService';
+import {BrowserRouter,Routes,Route}  from "react-router-dom"
+import Navbar from './Component/Navbar';
 import { Footer } from './Component/Footer';
+import { HomeRouter } from './HomeRouter';
+import Allroutes from './Allroutes/routes';
+import AuthContextComponent from './Allroutes/context';
+import PopupLoginForm from './Component/PopUpLogin';
 function App() {
- const clintid='389604519005-i3hrjk2mjdvva2aqa57ph0rcb8gd6hr6.apps.googleusercontent.com'
-   return (
-  <GoogleOAuthProvider clientId={clintid}>
-   <>
-   < Navbar/>
-  <Home/>
-  <TopService/>
+   return (<>
+ <AuthContextComponent>
+ <BrowserRouter>
+ <Navbar/>
+ 
+ <Routes>
+  <Route path='/' element = {<HomeRouter/>}/>
+  <Route path='/*' element = {<Allroutes/>}/>
+  <Route path='/login' element= {<PopupLoginForm/>}/>
+ </Routes>
+ </BrowserRouter>
   <Footer/>
-   </>
-  </GoogleOAuthProvider>
 
+  </AuthContextComponent>
+ </>
    )
 }
 

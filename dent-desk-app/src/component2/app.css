@@ -143,10 +143,7 @@ input[type="checkbox"]{
     margin-bottom:10px;
     margin-right: 10px;
   }
-  .input-box .button:active {
-    
-  }
-
+  
   .SearchBoxContainer{
     margin-top: 40px;
     margin-left: 30px;
@@ -440,137 +437,6 @@ input[type="checkbox"]{
   .License div>p:nth-child(3),p:nth-child(2){
     color: rgba(255, 255, 255, 0.6);
   }
-
-  .container {
-    margin-top: 100px;
-}
-
-.LoginName{
-  font-size: 20px;
-}
-.popup {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.popup-content {
-   
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    text-align: center;
-    width: 600px;
-}
-
-.form-control {
-    border: rgb(226, 226, 226);
-    color: rgb(51, 51, 51);
-    margin-bottom: 20px;
-}
-
-.gwMIGZ {
-    border-bottom: 1px solid rgb(206, 206, 206);
-    /* -webkit-box-flex: 1; */
-    flex-grow: 1;
-    margin-bottom: 15px;
-}
-
-.LoginLine h5 {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.popup-content {
-  
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-    position: relative;
-    text-align: center;
-    width: 600px;
-}
-
-.GoogleOuathButton img {
-    width: 20px;
-    height: 20px;
-    margin-right: 180px;
-    margin-bottom: 5px;
-    margin-left: 15px;
-}
-
-.LoginLine {
-    display: flex;
-    justify-content: center;
-}
-.close-popup-button {
-    position: absolute;
-    top: -45px;
-    right: 10px;
-    background-color: transparent;
-    border: none;
-    font-size: 90px;
-    cursor: pointer;
-}
-
-.divOfloginButtons {
-    font-size: 20px;
-    background-color: rgb(255, 240, 75);
-    margin-top: 30px;
-    border: rgb(255, 240, 75);
-    cursor: pointer;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.forgot-pass {
-    display: flex;
-    justify-content: flex-end;
-    text-decoration: none;
-    color: #1b1b1b;
-    margin-top: 10px;
-}
-
-.GoogleOuathButton {
-    display: flex;
-    background-color: #707070;
-    align-items: center;
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid rgb(25, 42, 80);
-    color: rgb(25, 42, 80);
-    box-sizing: border-box;
-}
-
-.GoogleOuathButton p {
-    align-items: center;
-    margin-top: 5px;
-}
-@media screen and (max-width: 500px){
-.close-popup-button {
-    top: -21px;
-    font-size: 50px;
-}
-
-.GoogleOuathButton img {
-    margin-right: 65px;
-}
-}
-@media screen and (max-width: 500px){
-.popup {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-}
   /********************************************* Responsive********************************* */
   @media screen and (max-width: 500px) {
     .input-box {
